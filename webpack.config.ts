@@ -1,5 +1,7 @@
 import path from "path";
-import webpack from "webpack";
+import webpack, { ProgressPlugin } from "webpack";
+
+import HtmlLWebpackPlugin from "html-webpack-plugin";
 
 type Env = {
   mode: "none" | "development" | "production",
@@ -13,6 +15,10 @@ const config = (env: Env): webpack.Configuration => ({
     filename: "[name].[hash].js",
     clean: true,
   },
+  plugins: [
+    new HtmlLWebpackPlugin({ template: path.resolve(__dirname, "public", "index.html") }),
+    new ProgressPlugin(),
+  ],
   module: {
     rules: [
       {
