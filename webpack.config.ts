@@ -16,7 +16,7 @@ const devServer: webpackDevServer.Configuration = {
 const config = (env: Env): webpack.Configuration => ({
   mode: env.mode ?? "development",
   devServer,
-  entry: path.resolve(__dirname, "src", "index.ts"),
+  entry: path.resolve(__dirname, "src", "index.tsx"),
   output: {
     path: path.resolve(__dirname, "build"),
     filename: "[name].[hash].js",
