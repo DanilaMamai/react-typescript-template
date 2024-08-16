@@ -1,1 +1,1 @@
-console.log("TEST");
+const test = (value: number) => value + 5;
