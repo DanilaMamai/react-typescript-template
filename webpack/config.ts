@@ -10,14 +10,15 @@ const devServer: webpackDevServer.Configuration = {
   open: true,
 };
 
-export const getWebpackConfig = (options: WebpackOptions): webpack.Configuration => {
+export const buildWebpackConfig = (options: WebpackOptions): webpack.Configuration => {
   const { env, paths } = options;
 
-  const isDev = env.mode === "development";
+  const mode = env.mode ?? "development";
+  const isDev = mode === "development";
 
   const config: webpack.Configuration = {
     mode: env.mode ?? "development",
-    entry: paths.entry,
+    entry: path.resolve(paths.src, "index.tsx"),
     output: {
       path: paths.output,
       filename: "[name].[hash].js",

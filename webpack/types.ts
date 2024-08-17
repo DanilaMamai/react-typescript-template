@@ -3,9 +3,9 @@ type Env = {
 };
 
 type Paths = {
-  entry: string;
   output: string;
   public: string;
+  src: string;
 };
 
 export type WebpackOptions = {
