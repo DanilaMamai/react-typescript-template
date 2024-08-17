@@ -13,6 +13,7 @@ const devServer: webpackDevServer.Configuration = {
 export const getWebpackConfig = (options: WebpackOptions): webpack.Configuration => ({
   mode: options.env.mode ?? "development",
   devServer,
+  devtool: "inline-source-map",
   entry: options.paths.entry,
   output: {
     path: options.paths.output,
