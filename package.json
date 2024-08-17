@@ -4,7 +4,8 @@
   "description": "A react-typescript template with webpack",
   "main": "index.ts",
   "scripts": {
-    "build": "webpack",
+    "build:dev": "webpack --env mode=development",
+    "build:prod": "webpack --env mode=production",
     "start": "webpack serve --open"
   },
   "keywords": [],
@@ -26,6 +27,7 @@
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-typescript-template": "file:"
+    "react-typescript-template": "file:",
+    "styled-components": "^6.1.12"
   }
 }
