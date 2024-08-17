@@ -6,8 +6,8 @@
   "scripts": {
     "build": "webpack --env mode=production",
     "start": "webpack serve --open",
-    "lint": "eslint \"src/**/*.+(js|jsx|json|ts|tsx)\" \"webpack/**/*.+(js|ts)\"",
-    "format": "prettier --write \"src/**/*.+(js|jsx|json|ts|tsx)\" \"webpack/**/*.+(js|ts)\""
+    "lint": "eslint src webpack",
+    "format": "prettier --write src webpack"
   },
   "keywords": [],
   "author": "",

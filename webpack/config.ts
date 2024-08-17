@@ -26,7 +26,7 @@ const buildWebpackConfig = (options: WebpackOptions): webpack.Configuration => {
       clean: true,
     },
     plugins: buildPlugins(options, isProd),
-    module: buildLoaders(options),
+    module: buildLoaders(),
     resolve: buildResove(options),
   };
 
