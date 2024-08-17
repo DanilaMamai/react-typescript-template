@@ -11,11 +11,12 @@
     "moduleResolution": "node",
     "paths": {
       "@/*": ["./src/*"],
-    }
+    },
   },
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"
     }
-  }
+  },
+  "include": ["src/*", "webpack/*"]
 }

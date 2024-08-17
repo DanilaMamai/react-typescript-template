@@ -21,4 +21,4 @@ It correctly bundles React in production mode and optimizes the build for the be
 ### TODO
 - [x] alias
 - [ ] eslint
-- [ ] prettier
+- [x] prettier

@@ -1,5 +1,5 @@
 type Env = {
-  mode: "none" | "development" | "production",
+  mode: "none" | "development" | "production";
 };
 
 type Paths = {
@@ -8,7 +8,9 @@ type Paths = {
   src: string;
 };
 
-export type WebpackOptions = {
+type WebpackOptions = {
   env: Env;
   paths: Paths;
 };
+
+export { WebpackOptions };

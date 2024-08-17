@@ -10,7 +10,7 @@ const devServer: webpackDevServer.Configuration = {
   open: true,
 };
 
-export const buildWebpackConfig = (options: WebpackOptions): webpack.Configuration => {
+const buildWebpackConfig = (options: WebpackOptions): webpack.Configuration => {
   const { env, paths } = options;
 
   const mode = env.mode ?? "development";
@@ -28,7 +28,7 @@ export const buildWebpackConfig = (options: WebpackOptions): webpack.Configurati
     plugins: buildPlugins(options, isProd),
     module: buildLoaders(options),
     resolve: buildResove(options),
-  }
+  };
 
   if (isDev) {
     config.devServer = devServer;
@@ -37,3 +37,5 @@ export const buildWebpackConfig = (options: WebpackOptions): webpack.Configurati
 
   return config;
 };
+
+export { buildWebpackConfig };

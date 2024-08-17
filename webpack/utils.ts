@@ -1,5 +1,5 @@
 import HtmlLWebpackPlugin from "html-webpack-plugin";
-import path from "path";;
+import path from "path";
 import webpack from "webpack";
 import webpackBundleAnalyzer from "webpack-bundle-analyzer";
 
@@ -8,12 +8,12 @@ import { WebpackOptions } from "./types";
 const buildLoaders = (options: WebpackOptions): webpack.ModuleOptions => {
   const fontsLoader = {
     test: /\.(woff|woff2|eot|ttf|otf)$/i,
-    type: 'asset/resource',
+    type: "asset/resource",
   };
 
   const imagesLoader = {
     test: /\.(png|svg|jpg|jpeg|gif)$/i,
-    type: 'asset/resource',
+    type: "asset/resource",
   };
 
   const tsLoader = {
@@ -24,7 +24,6 @@ const buildLoaders = (options: WebpackOptions): webpack.ModuleOptions => {
 
   return { rules: [tsLoader, fontsLoader, imagesLoader] };
 };
-
 
 const buildPlugins = (options: WebpackOptions, isProd: boolean) => {
   const plugins = [
@@ -43,7 +42,10 @@ const buildPlugins = (options: WebpackOptions, isProd: boolean) => {
 };
 
 const buildResove = (options: WebpackOptions): webpack.ResolveOptions => {
-  return { extensions: [".tsx", ".ts", ".js"], alias: { "@": options.paths.src } };
+  return {
+    extensions: [".tsx", ".ts", ".js"],
+    alias: { "@": options.paths.src },
+  };
 };
 
 export { buildLoaders, buildPlugins, buildResove };
