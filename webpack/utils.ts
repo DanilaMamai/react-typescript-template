@@ -1,7 +1,6 @@
 import HtmlLWebpackPlugin from "html-webpack-plugin";
 import path from "path";
 import webpack from "webpack";
-import webpackBundleAnalyzer from "webpack-bundle-analyzer";
 
 import { WebpackOptions } from "./types";
 
@@ -25,21 +24,13 @@ const buildLoaders = (): webpack.ModuleOptions => {
   return { rules: [tsLoader, fontsLoader, imagesLoader] };
 };
 
-const buildPlugins = (options: WebpackOptions, isProd: boolean) => {
-  const plugins = [
-    new HtmlLWebpackPlugin({
-      template: path.resolve(options.paths.public, "index.html"),
-      favicon: path.resolve(options.paths.public, "favicon.png"),
-    }),
-    new webpack.ProgressPlugin(),
-  ];
-
-  if (isProd) {
-    plugins.push(new webpackBundleAnalyzer.BundleAnalyzerPlugin());
-  }
-
-  return plugins;
-};
+const buildPlugins = (options: WebpackOptions) => [
+  new HtmlLWebpackPlugin({
+    template: path.resolve(options.paths.public, "index.html"),
+    favicon: path.resolve(options.paths.public, "favicon.png"),
+  }),
+  new webpack.ProgressPlugin(),
+];
 
 const buildResove = (options: WebpackOptions): webpack.ResolveOptions => {
   return {

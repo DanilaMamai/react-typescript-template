@@ -1,6 +1,16 @@
 # react-typescript-template
 A react-typescript template with webpack
 
+## Docker commands
+
+### `docker build -t react-typescript-template .`
+
+Builds docker image
+
+### `docker run -d -p 3000:80 react-typescript-template`
+
+Runs docker container
+
 ## Available Scripts
 
 In the project directory, you can run:
