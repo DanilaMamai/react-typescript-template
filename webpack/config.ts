@@ -15,6 +15,7 @@ export const buildWebpackConfig = (options: WebpackOptions): webpack.Configurati
 
   const mode = env.mode ?? "development";
   const isDev = mode === "development";
+  const isProd = mode === "production";
 
   const config: webpack.Configuration = {
     mode: env.mode ?? "development",
@@ -24,7 +25,7 @@ export const buildWebpackConfig = (options: WebpackOptions): webpack.Configurati
       filename: "[name].[hash].js",
       clean: true,
     },
-    plugins: buildPlugins(options),
+    plugins: buildPlugins(options, isProd),
     module: buildLoaders(options),
     resolve: buildResove(options),
   }
