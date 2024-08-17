@@ -11,7 +11,7 @@ const devServer: webpackDevServer.Configuration = {
 };
 
 export const getWebpackConfig = (options: WebpackOptions): webpack.Configuration => ({
-  mode: options.env.mode ?? "production",
+  mode: options.env.mode ?? "development",
   devServer,
   entry: options.paths.entry,
   output: {
