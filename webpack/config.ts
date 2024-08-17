@@ -2,7 +2,7 @@ import path from "path";
 import webpack from "webpack";
 import webpackDevServer from "webpack-dev-server";
 
-import { buildLoaders, buildPlugins } from "./utils";
+import { buildLoaders, buildPlugins, buildResove } from "./utils";
 import { WebpackOptions } from "./types";
 
 const devServer: webpackDevServer.Configuration = {
@@ -15,12 +15,8 @@ export const getWebpackConfig = (options: WebpackOptions): webpack.Configuration
 
   const isDev = env.mode === "development";
 
-  const devtool = isDev ? "inline-source-map" : false;
-
   const config: webpack.Configuration = {
     mode: env.mode ?? "development",
-    devServer,
-    devtool,
     entry: paths.entry,
     output: {
       path: paths.output,
@@ -29,9 +25,12 @@ export const getWebpackConfig = (options: WebpackOptions): webpack.Configuration
     },
     plugins: buildPlugins(options),
     module: buildLoaders(options),
-    resolve: {
-      extensions: [".tsx", ".ts", ".js"],
-    }
+    resolve: buildResove(options),
+  }
+
+  if (isDev) {
+    config.devServer = devServer;
+    config.devtool = "inline-source-map";
   }
 
   return config;

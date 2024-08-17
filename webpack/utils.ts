@@ -19,4 +19,8 @@ const buildPlugins = (options: WebpackOptions) => ([
   new webpack.ProgressPlugin()
 ]);
 
-export { buildLoaders, buildPlugins };
+const buildResove = (options: WebpackOptions): webpack.ResolveOptions => {
+  return { extensions: [".tsx", ".ts", ".js"] };
+};
+
+export { buildLoaders, buildPlugins, buildResove };
