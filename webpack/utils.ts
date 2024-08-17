@@ -5,7 +5,7 @@ import webpackBundleAnalyzer from "webpack-bundle-analyzer";
 
 import { WebpackOptions } from "./types";
 
-const buildLoaders = (options: WebpackOptions): webpack.ModuleOptions => {
+const buildLoaders = (): webpack.ModuleOptions => {
   const fontsLoader = {
     test: /\.(woff|woff2|eot|ttf|otf)$/i,
     type: "asset/resource",

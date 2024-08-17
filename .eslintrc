@@ -1,0 +1,43 @@
+{
+  "env": {
+    "browser": true,
+    "jest": true,
+    "es6": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "import",
+    "@typescript-eslint",
+    "react-hooks"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module"
+  },
+  "root": true,
+  "rules": {
+    "no-console": "warn",
+    "no-eval": "error",
+    "import/first": "error",
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
