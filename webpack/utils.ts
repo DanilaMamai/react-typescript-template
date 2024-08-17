@@ -1,4 +1,5 @@
 import HtmlLWebpackPlugin from "html-webpack-plugin";
+import path from "path";;
 import webpack from "webpack";
 
 import { WebpackOptions } from "./types";
@@ -25,7 +26,10 @@ const buildLoaders = (options: WebpackOptions): webpack.ModuleOptions => {
 
 
 const buildPlugins = (options: WebpackOptions) => ([
-  new HtmlLWebpackPlugin({ template: options.paths.html }),
+  new HtmlLWebpackPlugin({
+    template: path.resolve(options.paths.public, "index.html"),
+    favicon: path.resolve(options.paths.public, "favicon.png"),
+  }),
   new webpack.ProgressPlugin()
 ]);
 
