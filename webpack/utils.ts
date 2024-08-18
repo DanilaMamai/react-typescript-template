@@ -7,12 +7,18 @@ import { WebpackOptions } from "./types";
 const buildLoaders = (): webpack.ModuleOptions => {
   const fontsLoader = {
     test: /\.(woff|woff2|eot|ttf|otf)$/i,
-    type: "asset/resource",
+    loader: "file-loader",
+    options: {
+      outputPath: "assets/fonts",
+    },
   };
 
   const imagesLoader = {
     test: /\.(png|svg|jpg|jpeg|gif)$/i,
-    type: "asset/resource",
+    loader: "file-loader",
+    options: {
+      outputPath: "assets/images",
+    },
   };
 
   const tsLoader = {
@@ -21,7 +27,7 @@ const buildLoaders = (): webpack.ModuleOptions => {
     exclude: /node_modules/,
   };
 
-  return { rules: [tsLoader, fontsLoader, imagesLoader] };
+  return { rules: [fontsLoader, imagesLoader, tsLoader] };
 };
 
 const buildPlugins = (options: WebpackOptions) => [
