@@ -13,4 +13,4 @@ type WebpackOptions = {
   paths: Paths;
 };
 
-export { WebpackOptions };
+export { type WebpackOptions };

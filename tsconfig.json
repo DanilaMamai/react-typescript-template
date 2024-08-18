@@ -1,22 +1,29 @@
 {
   "compilerOptions": {
+    "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "outDir": "./build/",
-    "noImplicitAny": true,
-    "module": "ESNext",
-    "target": "es5",
+    "forceConsistentCasingInFileNames": true,
     "jsx": "react",
-    "allowJs": true,
+    "ignoreDeprecations": "5.0",
+    "isolatedModules": true,
+    "module": "ESNext",
     "moduleResolution": "node",
+    "noEmit": false,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "suppressImplicitAnyIndexErrors": true,
     "paths": {
-      "@/*": ["./src/*"],
+      "src/*": ["./src/*"],
     },
+    "target": "es5",
   },
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"
     }
   },
-  "include": ["src/*", "webpack/*"]
+  "include": ["src", "webpack"]
 }
