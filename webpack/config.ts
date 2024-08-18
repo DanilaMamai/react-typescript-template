@@ -6,6 +6,7 @@ import { buildLoaders, buildPlugins, buildResove } from "./utils";
 import { WebpackOptions } from "./types";
 
 const devServer: webpackDevServer.Configuration = {
+  historyApiFallback: true,
   port: "3000",
   open: true,
 };
