@@ -1,8 +1,6 @@
 {
   "name": "react-typescript-template",
   "version": "1.0.0",
-  "description": "A react-typescript template with webpack",
-  "main": "index.ts",
   "scripts": {
     "build": "webpack --env mode=production",
     "start": "webpack serve --open",
