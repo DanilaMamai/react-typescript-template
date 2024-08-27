@@ -40,8 +40,9 @@ const buildPlugins = (options: WebpackOptions) => [
 
 const buildResove = (options: WebpackOptions): webpack.ResolveOptions => {
   return {
+    roots: [options.paths.src],
     extensions: [".tsx", ".ts", ".js"],
-    alias: { "@": options.paths.src },
+    alias: { src: options.paths.src },
   };
 };
 
