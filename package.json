@@ -4,7 +4,7 @@
   "scripts": {
     "build": "webpack --env mode=production",
     "start": "webpack serve --open",
-    "check": "prettier --write src webpack && eslint src webpack && tsc --noEmit"
+    "test": "prettier --write src webpack && eslint src webpack && tsc --noEmit"
   },
   "keywords": [],
   "author": "",
