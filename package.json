@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "scripts": {
     "build": "webpack --env mode=production",
+    "lint": "eslint src webpack",
+    "prettier": "prettier src webpack --write",
     "start": "webpack serve --open",
-    "test": "prettier --write src webpack && eslint src webpack && tsc --noEmit"
+    "types": "tsc --noEmit"
   },
   "keywords": [],
   "author": "",
