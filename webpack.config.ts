@@ -9,6 +9,6 @@ export default (env: WebpackOptions["env"]) => {
       output: path.resolve(__dirname, "build"),
       public: path.resolve(__dirname, "public"),
       src: path.resolve(__dirname, "src"),
-    }
+    },
   });
 };
