@@ -1,12 +1,11 @@
 import path from "path";
 import webpack from "webpack";
-
-import { Configuration } from "webpack-dev-server";
+import webpackDevServer from "webpack-dev-server";
 
 import { buildLoaders, buildPlugins, buildResove } from "./utils";
 import { WebpackOptions } from "./types";
 
-const devServer: Configuration = {
+const devServer: webpackDevServer.Configuration = {
   historyApiFallback: true,
   port: "3000",
   open: true,
